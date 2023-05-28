@@ -1,0 +1,22 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body" {{comic.id}}>
+        <h2 class="text-primary text-uppercase">{{comic.titulo}}</h2>
+        <h3 class="mb-2">Vol. {{comic.volumen}}</h3>
+        <h4 class="mb-2">Categoría: {{comic.nombre_categoria}}</h4>
+        <p class="card-text">Editorial: {{comic.nombre_editorial}}</p>
+
+        {{#ifEquals comic.estado 'Disponible'}}
+        <p class="card-text">Disponibilidad en la editorial: <span style="font-weight:bold; color: green;">{{comic.estado}}</span></p>
+        {{else}}
+        {{#ifEquals comic.estado 'Agotado'}}
+        <p class="card-text">Disponibilidad en la editorial: <span style="font-weight:bold; color: rgb(255, 136, 0);">{{comic.estado}}</span></p>
+        {{else}}
+        <p class="card-text">Disponibilidad en la editorial: <span style="font-weight:bold; color: red;">{{comic.estado}}</span></p>
+        {{/ifEquals}}
+        {{/ifEquals}}
+
+        <a class="btn btn-success" href="/comics/edit/{{id}}">Editar</a>
+        <a class="btn btn-danger" href="/comics/delete/{{id}}">Eliminar</a>
+        <a class="btn btn-primary" href="/comics">Volver</a>
+    </div>
+</div>

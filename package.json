@@ -1,0 +1,46 @@
+{
+  "name": "reporama2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon ./src",
+    "start": "node ./src",
+    "sass:compile": "node-sass src/public/sass/ -o src/public/css/ && npm run dev",
+    "sass:watch": "node-sass src/public/sass/ -o src/public/css/ --watch"
+  },
+  "keywords": [
+    "Express",
+    "Vue 3 (composition API)",
+    "Vite",
+    "MySQL",
+    "Bootdtap",
+    "Sass"
+  ],
+  "author": "Laura Izquierdo Plá",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^5.3.5",
+    "express-mysql-session": "^3.0.0",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.0.1",
+    "handlebars": "^4.7.7",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.3.2",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "node-sass": "^9.0.0",
+    "nodemon": "^2.0.22",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.3.0"
+  }
+}

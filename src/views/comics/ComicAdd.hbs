@@ -1,0 +1,62 @@
+{{!-- <section>
+    <div class="card">
+        <div class="card-body" {{comic.id}}>
+            <h2 class="text-primary text-uppercase">{{comic.titulo}}</h2>
+            <h3 class="mb-2">Vol. {{comic.volumen}}</h3>
+            <h4 class="mb-2">Categoría: {{comic.nombre_categoria}}</h4>
+            <p class="card-text">Editorial: {{comic.nombre_editorial}}</p>
+
+            {{#ifEquals comic.estado 'Disponible'}}
+            <p class="card-text">Disponibilidad en la editorial: <span style="font-weight:bold; color: green;">{{comic.estado}}</span></p>
+            {{else}}
+            {{#ifEquals comic.estado 'Agotado'}}
+            <p class="card-text">Disponibilidad en la editorial: <span style="font-weight:bold; color: rgb(255, 136, 0);">{{comic.estado}}</span></p>
+            {{else}}
+            <p class="card-text">Disponibilidad en la editorial: <span style="font-weight:bold; color: red;">{{comic.estado}}</span></p>
+            {{/ifEquals}}
+            {{/ifEquals}}
+
+            <a class="btn btn-danger" href="/comics/delete/{{id}}">Eliminar</a>
+            <a class="btn btn-secondary" href="/comics/list">Volver</a>
+        </div>
+    </div>
+</section> --}}
+
+<section>
+    <h3>SIMPLIFICA EL TRABAJO</h3>    
+    <h1>Añade un comic</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni hic porro at magnam reiciendis quis, aut aliquid</p>
+    <form action="/comics/add" method="post">
+        <div class="mb-3">
+            <input type="text" class="form-control" name="categoria" aria-describedby="emailHelp" placeholder="Selecciona Categoría">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" name="editorial" aria-describedby="emailHelp" placeholder="Selecciona Editorial">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" name="titulo" aria-describedby="emailHelp" placeholder="Selecciona Título">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" name="volumen" aria-describedby="emailHelp" placeholder="Selecciona Volúmen">
+        </div>
+
+        <div class="input-group mb-3">
+            <input type="button" class="form-select dropdown-toggle" name="estado" data-bs-toggle="dropdown" aria-expanded="false" placeholder="Selecciona algo" aria-label="Text input with dropdown button">
+            <ul class="dropdown-menu">
+                <li><hr class="lineaDivisora"></li>
+                {{#each comic}}
+                    <li><a class="dropdown-item" href="#">{{comic.estado}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="mb-3">
+            <select id="disabledSelect" class="form-select" >
+                <option>Disabled select</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success px-5">Submit</button>
+        </div>
+    </form>
+</section>

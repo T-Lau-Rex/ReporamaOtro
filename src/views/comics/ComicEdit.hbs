@@ -1,40 +1,74 @@
-<section>
-    <h3>SIMPLIFICA EL TRABAJO</h3>    
-    <h1>Añade un comic</h1>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni hic porro at magnam reiciendis quis, aut aliquid</p>
-    <form action="/comics/add" method="post">
-        <div class="mb-3">
-            <input type="text" class="form-control" name="id_categoria" aria-describedby="emailHelp" placeholder="Selecciona Categoría">
-        </div>
-        <div class="mb-3">
-            <input type="text" class="form-control" name="id_editorial" aria-describedby="emailHelp" placeholder="Selecciona Editorial">
-        </div>
-        <div class="mb-3">
-            <input type="text" class="form-control" name="titulo" aria-describedby="emailHelp" placeholder="Selecciona Título">
-        </div>
-        <div class="mb-3">
-            <input type="text" class="form-control" name="volumen" aria-describedby="emailHelp" placeholder="Selecciona Volúmen">
-        </div>
+<section class="seccion">
+    <div class="tarjeta">
+        <h3 class="mayusculas">SIMPLIFICA EL TRABAJO</h3>
+        <h1 class="titulo">Añade un comic</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni hic porro at magnam reiciendis quis, aut aliquid</p>
+        <form action="/comics/edit/{{comic.id}}" method="post">
 
-        <div class="input-group mb-3">
-            <input type="button" class="form-select dropdown-toggle" name="estado" data-bs-toggle="dropdown" aria-expanded="false" placeholder="Selecciona algo" aria-label="Text input with dropdown button">
-            <ul class="dropdown-menu">
-                <li><hr class="lineaDivisora"></li>
-                {{#each comic}}
-                    <li><a class="dropdown-item" href="#">{{comic.estado}}</a></li>
-                {{/each}}
-            </ul>
-        </div>
+            <div class="input-group mb-3">
+                <input required type="text" class="form-select dropdown-toggle" name="nombre_categoria" value="{{comic.nombre_categoria}}" data-bs-toggle="dropdown" aria-expanded="false" placeholder="Selecciona Categoría">
+                <ul class="dropdown-menu">
+                    <hr class="lineaDivisora dropdown-divider">
+                    {{#each categorias}}
+                        <li class="dropdown-item select-option">{{nombre_categoria}}</li>
+                    {{/each}}
+                </ul>
+            </div>
 
-        <div class="mb-3">
-            <select id="disabledSelect" class="form-select" >
-                <option>Disabled select</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-success px-3">Editar</button>
-            <a class="btn btn-danger px-3" href="/comics/delete/{{id}}">Eliminar</a>
-            <a class="btn btn-secondary px-3" href="/comics">Volver</a>
-        </div>
-    </form>
+            <div class="input-group mb-3">
+                <input required type="text" class="form-select dropdown-toggle" name="nombre_editorial" value="{{comic.nombre_editorial}}" data-bs-toggle="dropdown" aria-expanded="false" placeholder="Selecciona Editorial">
+                <ul class="dropdown-menu">
+                    <hr class="lineaDivisora dropdown-divider">
+                    {{#each editoriales}}
+                        <li class="dropdown-item select-option">{{nombre_editorial}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <div class="input-group mb-3">
+                <input required type="text" class="form-select dropdown-toggle" name="titulo" value="{{comic.titulo}}" data-bs-toggle="dropdown" aria-expanded="false" placeholder="Selecciona Título">
+                <ul class="dropdown-menu">
+                    <hr class="lineaDivisora dropdown-divider">
+                    {{#each comics}}
+                        <li class="dropdown-item select-option">{{titulo}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" name="volumen" value="{{comic.volumen}}" placeholder="Selecciona Volúmen">
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-select dropdown-toggle" name="estado" value="{{comic.estado}}" data-bs-toggle="dropdown" aria-expanded="false" placeholder="Selecciona Estado">
+                <ul class="dropdown-menu">
+                    <hr class="lineaDivisora dropdown-divider">
+                        <li class="dropdown-item select-option" selected>Disponible</li>
+                        <li class="dropdown-item select-option">Agotado</li>
+                        <li class="dropdown-item select-option">Descatalogado</li>
+                </ul>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success px-5">GUARDAR</button>
+            </div>
+        </form>
+
+    </div>
 </section>
+
+<script>
+    // Obtener referencia a todos los inputs y a los elementos del dropdown
+    const inputs = document.querySelectorAll('.form-select');
+    const dropdownItems = document.querySelectorAll('.select-option');
+
+    // Agregar evento de clic a cada elemento del dropdown
+    dropdownItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const selectedOption = item.textContent;
+            const input = item.closest('.input-group').querySelector('.form-select');
+            input.value = selectedOption;
+        });
+    });
+</script>
+

@@ -1,6 +1,7 @@
 // IMPORTACIONES
 
-import MySQLStore from "express-mysql-session";
+import './lib/passport.js'
+
 import cors from "cors";
 import dotenv from "dotenv";
 import exphbs from "express-handlebars";
@@ -11,20 +12,32 @@ import path from "path";
 import { registerHelper } from "./lib/handlebars.js";
 import router from "./routes/routes.js";
 
-// import flash from 'connect-flash' 
+// import MySQLStore from "express-mysql-session";
+
+// import { database } from './config/keys.js';
+
+
+
+
+
 // import passport from "passport";
+
+
+
 // import session from "express-session";
+
+// import flash from 'connect-flash' 
 
 // INICIALIZACIONES
 
 const app = express();
+
+
 dotenv.config();
 
 // SETTINGS
 
 const port = process.env.PORT || 4000;
-
-// ========================= Handlebars "viejo" ========================= //
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -45,28 +58,21 @@ app.engine(
 );
 app.set("view engine", ".hbs");
 
-// ====================================================================== //
-// ========================= Handlebars "nuevo" ========================= //
-
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-
-// app.set('views', path.join(__dirname, 'views'))
-
-// app.engine('.hbs', exphbs());
-// app.set('view engine', '.hbs');
-
-// const template = Handlebars.compile("Name: {{ name }}")
-// console.log(template({name: "Laura"}))
-
-// ====================================================================== //
-
 // MIDDLEWARES
+
+// app.use(session({
+//   secret:'reporamaaplicacion',
+//   resave: false,
+//   saveUninitialized: false,
+//   store: new MySQLStore(database)
+// }))
 
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
+// app.use(passport.initialize())
+// app.use(passport.session())
 
 // RUTAS
 

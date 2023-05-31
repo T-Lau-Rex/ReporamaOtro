@@ -1,0 +1,46 @@
+footer {
+  position: relative;
+  z-index: -1;
+  height: 325px;
+  background: #232F40; }
+
+#contenedorFoot {
+  width: 100%;
+  background: #2B3B4F !important;
+  position: absolute;
+  padding-inline: 20px !important;
+  height: 140%;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 1rem;
+  border-top-right-radius: 10px !important;
+  border-top-left-radius: 10px !important;
+  top: -154px; }
+
+.copy {
+  font-size: 13px; }
+
+.logo-Cuadrado-Futu {
+  width: 77px;
+  margin-bottom: 30px; }
+
+.redes {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  margin-block: 20px; }
+  .redes img {
+    width: 40px; }
+
+.policy {
+  display: flex;
+  justify-content: space-between; }
+  .policy a {
+    color: #BEFFBE !important;
+    font-size: 14px !important; }
+    .policy a:hover {
+      color: #009700 !important; }
+    .policy a:focus-visible {
+      border-inline: none !important; }

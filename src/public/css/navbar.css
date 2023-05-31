@@ -1,3 +1,13 @@
+.navbar-toggler {
+  border: none !important; }
+  .navbar-toggler:focus {
+    box-shadow: none !important; }
+  .navbar-toggler:focus-visible {
+    border-inline: none !important; }
+
+hr {
+  opacity: inherit !important; }
+
 .burger {
   background: none;
   border: none;
@@ -17,7 +27,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 20px;
+  width: 25px;
   height: 40px;
   cursor: pointer; }
 
@@ -25,21 +35,60 @@
   width: 100%;
   height: 2px;
   background-color: #FAFAFA;
-  margin-block: 2px;
-  border-radius: 20px; }
-
-body {
-  background: #232F40; }
+  margin-block: 3px;
+  border-radius: 10px !important; }
 
 .logo_Cuadrado {
   width: 45.86px; }
 
-.lineaDivisora {
-  border: solid 1px #BEFFBE; }
-
 .navbar-nav a {
+  color: #FAFAFA !important;
   font-size: 23px;
   font-weight: 700; }
+  .navbar-nav a:hover {
+    color: #C8C8C8 !important; }
   .navbar-nav a:focus {
-    color: #C0C0C0;
-    color: #666666; }
+    color: #8A8A8A !important; }
+
+.navbar-nav {
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+  padding-inline: 1rem !important;
+  position: absolute;
+  z-index: 999;
+  left: 0px;
+  top: 58px;
+  width: 100%;
+  background: #232F40; }
+
+.sombra {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); }
+
+.lineaDivisora {
+  background: #BEFFBE !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  margin-bottom: 6px !important;
+  opacity: none !important; }
+
+#navbarNav {
+  width: 100% !important;
+  margin-inline: 0 !important; }
+
+.dropdown-menu {
+  width: 99.9%;
+  border-radius: 0px !important;
+  margin-top: -15px !important;
+  border: 1px solid #C8C8C8 !important;
+  border-top: none !important;
+  color: #8A8A8A !important;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25); }
+
+.container-fluid {
+  padding-inline: 0 !important; }
+
+.barra {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1rem !important; }

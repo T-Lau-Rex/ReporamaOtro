@@ -1,23 +1,36 @@
-<section>
-    <h3>SIMPLIFICA EL TRABAJO</h3>    
-    <h1>Añade un comic</h1>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni hic porro at magnam reiciendis quis, aut aliquid</p>
-    <form>
-        <div class="mb-3">
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <div class="mb-3">
-            <select id="disabledSelect" class="form-select">
-                <option>Disabled select</option>
-            </select>
+<section class="seccion">
+    <div class="tarjeta">
+        <h3 class="mayusculas">únete a reporama</h3>
+        <h1 class="titulo">Regístrate</h1>
+
+        {{!-- <p>Tendrás acceso de manera rápida a los pedidos que hayas realizado para no perder el hilo ;)</p> --}}
+        
+        <p>Para crear listas de colecciones, <span style="color: pink;">categorías, editoriales... </span> y realizar reposiciones de forma sencilla <img class="guinyo" src="/img/icons/smile1.png" alt="guinyo"></p>
+
+        {{!-- <p>Para crear listas de colecciones, <span style="color: pink;">categorías, editoriales... </span> y realizar reposiciones de forma sencilla <img class="guinyo" src="/img/icons/wink2.png" alt="guinyo"></p> --}}
+
+        <form action="/signup" method="post">
+
+            <div class="input-group mb-3">
+                <input required type="text" class="inputNormal" name="nombre_usuario" placeholder="Nombre de usuario">
             </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+
+            <div class="input-group mb-3">
+                <input required type="text" class="inputNormal" name="correo" placeholder="Correo">
+            </div>
+
+            <div class="input-group mb-3">
+                <input required type="text" class="inputNormal" name="contrasena1" placeholder="Contraseña">
+            </div>
+
+            <div class="input-group mb-3">
+                <input required type="text" class="inputNormal" name="contrasena" placeholder="Repite la contraseña">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success px-5">crear cuenta</button>
+            </div>
+        </form>
+
+    </div>
 </section>

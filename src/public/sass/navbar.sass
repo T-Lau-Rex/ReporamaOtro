@@ -1,3 +1,16 @@
+@import '_colores'
+@import '_componentes'
+
+.navbar-toggler
+  border: none !important
+  &:focus
+    @include focus
+    
+  &:focus-visible
+    @include focusVisible
+
+hr
+  opacity: inherit !important
 .burger
   background: none
   border: none
@@ -17,28 +30,59 @@
   flex-direction: column
   justify-content: center
   align-items: center
-  width: 20px
+  width: 25px
   height: 40px
   cursor: pointer
 .bar
   width: 100%
   height: 2px
-  background-color: #FAFAFA
-  margin-block: 2px
-  border-radius: 20px
-body
-  background: #232F40
+  background-color: $casiBlanco
+  margin-block: 3px
+  border-radius: 10px !important
 
-a
-//   color: #FAFAFA  
-  color: #161616  
 .logo_Cuadrado
   width: 45.86px
-.lineaDivisora
-  border: solid 1px #BEFFBE
 .navbar-nav a
+  color: $casiBlanco !important
   font-size: 23px
   font-weight: 700
+  &:hover
+    color: $grisClaro !important
   &:focus
-    color: #C0C0C0
-    color: #666666
+    color: $gris !important
+
+// "position: absolute; z-index: 999;"
+
+.navbar-nav
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25)
+  padding-inline: 1rem !important
+  // position: absolut
+  position: absolute
+  z-index: 999
+  left: 0px
+  top: 58px
+  width: 100%
+  background: #232F40
+
+.sombra
+  width: 100%
+  height: 100%
+  background:  rgba(0, 0, 0, 0.4) 
+
+.lineaDivisora
+  @include lineaVerde
+
+#navbarNav
+  width: 100% !important
+  margin-inline: 0 !important
+
+.dropdown-menu
+  @include desplegableInput
+
+.container-fluid
+  padding-inline: 0 !important
+
+.barra
+  display: flex
+  justify-content: space-between
+  padding-inline: 1rem !important

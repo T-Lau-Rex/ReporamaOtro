@@ -1,50 +1,228 @@
+@import '_colores' 
+@import '_componentes'
+//importa el contenido del archivo al que hace referencia 
 *
   font-family: 'Raleway', sans-serif
-  color: #FAFAFA
-  background: #232F40
-  border-radius: none
-  
-.card
-  border: none
-section
-  padding: 2rem
-#catInput
-  border-radius: 0px
-#catInput::placeholder
-  color: #C8C8C8
-  font-style: italic
-.soyunli
-  margin-inline: 1rem
-  font-weight: 600
-  color: #8A8A8A
-.lineaDivisora
-  border: solid 1px #BEFFBE
-input
-  color: #8A8A8A
-  width: 100%
-  height: 50px
-  padding: 8px
-  font-size: 16px
-  border: 1px solid #C8C8C8
-  border-bottom: none
-  padding-inline: 18px
-  margin-top: 10px
-  &:focus-visible
-    outline: none
-.form-control
-  border-radius: none
-.form-select
-  color: #8A8A8A
-  width: 100%
-  height: 50px
-  padding: 8px
-  font-size: 16px
-  border: 1px solid #C8C8C8
-  border-bottom: none
-  padding-inline: 18px
-  margin-top: 10px
-  &:focus-visible
-    outline: none
+  color: $casiBlanco
+  border-radius: 0px !important
+  letter-spacing: 1px !important
 
-.form
-  border-radius: none
+body
+  background: $marinoOscuro
+
+.mayusculas
+  font-size: 14px
+  font-weight: 500
+  letter-spacing: 0.15em
+  text-transform: uppercase
+
+.titulo
+  font-size: 32px
+  font-weight: 700
+  line-height: 48px
+  font-feature-settings: 'pnum' on, 'lnum' on, 'liga' off
+
+.parrafo
+  font-size: 16px
+  font-weight: 400
+.tarjeta
+  @include tarjeta
+
+
+.card
+  @include cartel
+
+.seccion
+  padding: 2rem
+
+// ComicList
+
+.seccionList
+  @include seccion
+
+.informacionComic
+  font-size: 14px
+  margin-bottom: 10px
+  p
+    margin-bottom: .1rem
+  h3
+    margin-bottom: .1rem
+  
+.disponible
+  font-weight: bold
+
+.agotado
+  font-weight: bold
+  color: $naranjaRojo
+
+.descatalogado
+  font-weight: bold
+  color: $rojoOscuro
+
+.botonesInline
+  display: flex
+  justify-content: space-between  
+
+.linkSeparacion
+  width: 48% !important
+
+
+  // ========== COMUN ==========
+
+.btn
+  @include boton 
+
+input
+  color: $gris !important
+  width: 100%
+  height: 50px
+  padding: 8px
+  font-size: 16px
+  border: 1px solid $grisClaro !important
+  border-bottom: none !important
+  border-radius: 0px !important
+  padding-inline: 18px
+  margin-top: 10px
+  &::placeholder
+    color: $grisClaro !important
+  &:focus 
+    box-shadow: none !important
+  &:focus-visible
+    outline: none !important
+
+.card-body
+  padding: none !important
+
+    //Formulario ComicAdd/ComicEdit
+
+.form-control
+  color: $gris !important
+  border-radius: none !important
+  margin-top: 10px
+  margin-bottom: -5px !important
+
+  &::placeholder
+    color: $grisClaro
+
+.form-select
+  color: $gris !important
+  width: 100%
+  height: 50px
+  padding: 8px
+  font-size: 16px
+  border: 1px solid $grisClaro !important
+  border-bottom: 0px !important
+  border-radius: 0px !important
+  padding-inline: 18px
+  margin-top: 10px
+  margin-bottom: -5px !important
+  &:focus-visible
+    outline: none !important
+
+.dropdown-item
+  color: $gris !important 
+  background: white !important
+  padding-inline: 9px !important
+  height: 30px !important
+  padding-block: 3px !important
+  margin-block: 2px !important
+  &:hover
+    background: $grisClaro !important
+    border-radius: 4px !important
+a
+  color: $casiBlanco
+  text-decoration: none !important
+
+.dropdown-divider
+  @include lineaVerde
+
+// index.hbs que sería el Home
+
+#mainHome
+  padding: 15px
+
+.cardHome 
+  background: $marinoOscuro !important
+
+#containerList
+  display: flex
+  justify-content: center
+  background: $grisMuyClaro
+  border-radius: 8px !important
+  width: 82px
+  height: 88px
+  h5
+    // margin-top: .5rem !important 
+    font-size: 24px !important
+    font-weight: 700
+.parrafoHome
+  font-size: 16px !important
+  font-weight: 400
+  opacity: 80% !important
+  margin-left: 18px !important
+
+.circuloAdvertencia
+    width: 10px
+    height: 10px
+    background: $naranjaRojo
+    border-radius: 6px !important
+    margin-top: 5px 
+    margin-right: 8px
+.fondo
+  background: $marinoClaro
+  border-radius: 8px !important
+  margin-bottom: .5rem !important
+
+.iconosHome  
+  width: 55px
+
+.hache5
+   display: flex
+   margin-top: 20px
+
+.divisorGordo
+	background-color: $verdeClaro
+	height: 5px !important
+	border-radius: 3px !important
+  margin-bottom: 30px !important
+
+      // Statics
+
+.cardStatics
+  margin-top: 50px
+  padding-block: 25px
+  border-radius: 8px !important
+  background: $marinoOscuro
+
+.estadisticas
+  height: 200px
+  background: $casiBlanco
+  border-radius: 8px !important
+
+.divStatics
+  padding-inline: 20px 
+
+.h3Statics  
+  margin-top: 30px
+  font-size: 20px
+  font-weight: 600
+
+.enlaceSubrayado
+  color: $casiBlanco
+  text-decoration: underline 
+  font-size: 13px
+  &:hover
+    color: $grisClaro
+  &:focus-visible
+    
+.irDerecha
+  width: 6px
+  margin-left: 5px
+
+// @media screen 320px (movil)
+// @media only screen and ( max-width: 320px)
+// .sidebar
+//     border: 1px solid
+//     width: 300px
+
+// @media only screen and (max-width: 768px)

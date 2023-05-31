@@ -1,28 +1,66 @@
-{{#if comicsCompletos}}
-{{#each comicsCompletos}}
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <h2 class="text-primary text-uppercase">{{titulo}}</h2>
-        <h3 class="mb-2">Vol. {{volumen}}</h3>
-        <h4 class="mb-2">Categoría: {{nombre_categoria}}</h4>
-        <p class="card-text">Editorial: {{nombre_editorial}}</p>
-        {{#ifEquals estado 'Disponible'}}
-        <p class="card-text">Disponibilidad en la editorial: <span style="font-weight:bold; color: green;">{{estado}}</span></p>
-        {{else}}
-        {{#ifEquals estado 'Agotado'}}
-        <p class="card-text">Disponibilidad en la editorial: <span style="font-weight:bold; color: rgb(255, 136, 0);">{{estado}}</span></p>
-        {{else}}
-        <p class="card-text">Disponibilidad en la editorial: <span style="font-weight:bold; color: red;">{{estado}}</span></p>
-        {{/ifEquals}}
-        {{/ifEquals}}
-        {{!-- <a class="btn btn-danger" href="/comics/delete/{{id}}">Eliminar</a>
-        <a class="btn btn-secondary" href="/comics/edit/{{id}}">Ver uno</a> --}}
-        <a class="btn btn-primary" href="/comics/edit/{{id}}">Editar</a>
-        <a class="btn btn-danger" href="/comics/delete/{{id}}">Eliminar</a>
-        <a class="btn btn-success" href="/comics/mostrar/{{id}}">Ver</a>
+{{!-- <section class="seccionList">
+    {{#if comicsCompletos}}
+    {{#each comicsCompletos}}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h2>{{titulo}}</h2>
+            <h3 class="mb-2">Vol. {{volumen}}</h3>
+            <h4 class="mb-2">Categoría: {{nombre_categoria}}</h4>
+            <p class="card-text">Editorial: {{nombre_editorial}}</p>
+            {{#ifEquals estado 'Disponible'}}
+            <p class="card-text">Disponibilidad en la editorial: <span style="font-weight:bold; color: green;">{{estado}}</span></p>
+            {{else}}
+            {{#ifEquals estado 'Agotado'}}
+            <p class="card-text">Disponibilidad en la editorial: <span style="font-weight:bold; color: rgb(255, 136, 0);">{{estado}}</span></p>
+            {{else}}
+            <p class="card-text">Disponibilidad en la editorial: <span style="font-weight:bold; color: red;">{{estado}}</span></p>
+            {{/ifEquals}}
+            {{/ifEquals}}
+            <a class=" btn btn-primary" href="/comics/edit/{{id}}">EDITAR</a>
+            <a class=" btn btn-danger" href="/comics/delete/{{id}}">ELIMINAR</a>
+            <a class=" btn btn-success" href="/comics/mostrar/{{id}}">VER</a>
+        </div>
     </div>
-</div>
-{{/each}}
-{{else}}
-<p>No hay cómics disponibles.</p>
-{{/if}}
+    {{/each}}
+    {{else}}
+    <p>No hay cómics disponibles.</p>
+    {{/if}}
+</section> --}}
+
+
+<section class="seccionList">
+    {{#if comicsCompletos}}
+    {{#each comicsCompletos}}
+    <div class="card" style="width: 18rem;">
+        <iv class="comics card-body">
+
+            <div class="informacionComic">
+                <h3>{{titulo}} Vol. {{volumen}}</h3>
+                <p>{{nombre_categoria}}, Editorial: {{nombre_editorial}}</p>
+
+                {{#ifEquals estado 'Disponible'}}
+                <p class="disponible">{{estado}}</p>
+                {{else}}
+                
+                {{#ifEquals estado 'Agotado'}}
+                <p class="agotado">{{estado}}</p>
+                {{else}}
+                <p class="descatalogado">{{estado}}</p>
+                
+                {{/ifEquals}}
+                {{/ifEquals}}
+            </div>
+
+            <div class="botonesInline">
+                <a class="linkSeparacion" href="/comics/edit/{{id}}">EDITAR</a>
+                <a class="linkSeparacion" href="/comics/delete/{{id}}">ELIMINAR</a>
+                {{!-- <a class=" btn btn-success" href="/comics/mostrar/{{id}}">VER</a> --}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    {{else}}
+    <p>No hay cómics disponibles.</p>
+    {{/if}}
+
+</section>

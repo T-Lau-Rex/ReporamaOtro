@@ -1,10 +1,11 @@
 <section class="seccion">
     <div class="tarjeta">
         <h3 class="mayusculas">SIMPLIFICA EL TRABAJO</h3>
-        <h1 class="titulo">Añade un comic</h1>
+        <h1 class="titulo">Edita un cómic</h1>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni hic porro at magnam reiciendis quis, aut aliquid</p>
         <form action="/comics/edit/{{comic.id}}" method="post">
 
+            <label for="">Selecciona Categoría</label>
             <div class="input-group mb-3">
                 <input required type="text" class="form-select dropdown-toggle" name="nombre_categoria" value="{{comic.nombre_categoria}}" data-bs-toggle="dropdown" aria-expanded="false" placeholder="Selecciona Categoría">
                 <ul class="dropdown-menu">
@@ -14,6 +15,8 @@
                     {{/each}}
                 </ul>
             </div>
+
+            <label for="">Selecciona Editorial</label>
 
             <div class="input-group mb-3">
                 <input required type="text" class="form-select dropdown-toggle" name="nombre_editorial" value="{{comic.nombre_editorial}}" data-bs-toggle="dropdown" aria-expanded="false" placeholder="Selecciona Editorial">
@@ -25,6 +28,8 @@
                 </ul>
             </div>
 
+            <label for="">Selecciona Título</label>
+
             <div class="input-group mb-3">
                 <input required type="text" class="form-select dropdown-toggle" name="titulo" value="{{comic.titulo}}" data-bs-toggle="dropdown" aria-expanded="false" placeholder="Selecciona Título">
                 <ul class="dropdown-menu">
@@ -35,9 +40,13 @@
                 </ul>
             </div>
 
+            <label for="">Selecciona Volúmen</label>
+
             <div class="input-group mb-3">
                 <input type="number" class="form-control" name="volumen" value="{{comic.volumen}}" placeholder="Selecciona Volúmen">
             </div>
+
+            <label for="">Selecciona Estado</label>
 
             <div class="input-group mb-3">
                 <input type="text" class="form-select dropdown-toggle" name="estado" value="{{comic.estado}}" data-bs-toggle="dropdown" aria-expanded="false" placeholder="Selecciona Estado">
@@ -50,7 +59,7 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-success px-5">GUARDAR</button>
+                <button type="submit" class="btn btn-success px-4">GUARDAR</button>
             </div>
         </form>
 

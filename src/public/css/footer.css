@@ -4,13 +4,15 @@ footer {
   height: 325px;
   background: #232F40; }
 
+.llevarDelante {
+  z-index: 999 !important; }
+
 #contenedorFoot {
   width: 100%;
   background: #2B3B4F !important;
   position: absolute;
   padding-inline: 20px !important;
   height: 140%;
-  z-index: -1;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -37,10 +39,10 @@ footer {
 .policy {
   display: flex;
   justify-content: space-between; }
-  .policy a {
-    color: #BEFFBE !important;
-    font-size: 14px !important; }
-    .policy a:hover {
-      color: #009700 !important; }
-    .policy a:focus-visible {
-      border-inline: none !important; }
+
+.enlaces {
+  color: #BEFFBE !important;
+  font-size: 14px !important;
+  text-decoration: underline !important; }
+  .enlaces:hover {
+    opacity: 80%; }

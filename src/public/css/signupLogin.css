@@ -3,3 +3,29 @@
 
 .guinyo {
   width: 17px; }
+
+.crearCuenta {
+  margin-bottom: 13px !important;
+  padding-top: 12px !important;
+  margin-top: 15px;
+  width: 100%;
+  height: 50px;
+  color: #BEFFBE !important;
+  text-transform: uppercase;
+  border: solid 2px #BEFFBE !important;
+  background: #2B3B4F !important;
+  border: 2px solid #BEFFBE !important;
+  box-shadow: 4px -4px 0px #BEFFBE; }
+  .crearCuenta:hover {
+    color: #2B3B4F !important;
+    background: #BEFFBE !important;
+    border: 2px solid #2B3B4F !important;
+    transition: none !important; }
+  .crearCuenta:active {
+    box-shadow: 2px -2px 0px #BEFFBE !important; }
+
+.contrasenaMatchError {
+  color: #ff1800; }
+
+.datosMatchError {
+  color: #ff1800; }

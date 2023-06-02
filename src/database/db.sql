@@ -1,16 +1,19 @@
 CREATE DATABASE IF NOT EXISTS reporamaaaaa;
+CREATE DATABASE IF NOT EXISTS reporama2;
 
 USE reporamaaaaa;
+USE reporama2;
+
 
 CREATE TABLE IF NOT EXISTS trabajadores (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre_usuario VARCHAR(100) NOT NULL,
     correo VARCHAR(100) NOT NULL,
-    contraseña VARCHAR(100) NOT NULL,
+    contrasena VARCHAR(100) NOT NULL,
     foto_imagen VARCHAR(255)
 );
 
-INSERT INTO trabajadores (nombre_usuario, correo, contraseña) VALUES ("Jesus", "jesuskyman@hotmail.com", "123");
+INSERT INTO trabajadores (nombre_usuario, correo, contrasena) VALUES ("Jesus", "jesuskyman@hotmail.com", "123");
 
 DESCRIBE trabajadores;
 SELECT * FROM trabajadores;

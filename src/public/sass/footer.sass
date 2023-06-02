@@ -7,22 +7,22 @@ footer
 	height: 325px
 	background: $marinoOscuro
 
+.llevarDelante
+	z-index: 999 !important
+
 #contenedorFoot
     width: 100%
-    background: #2B3B4F !important
+    background: $marinoClaro !important
     position: absolute
     padding-inline: 20px !important
     height: 140%
-    z-index: -1
     display: flex
     flex-direction: column
     justify-content: end
     padding: 1rem
-    // border: 2px solid yellow !important
     border-top-right-radius: 10px !important
     border-top-left-radius: 10px !important
     top: -154px
-
 
 .copy
     font-size: 13px
@@ -39,12 +39,11 @@ footer
 .policy
     display: flex
     justify-content: space-between
-    a
-        color: $verdeClaro !important
-        font-size: 14px !important
-        &:hover
-            color: $verdeOscuro !important
-        &:focus-visible
-            @include focusVisible
-            
+.enlaces
+    color: $verdeClaro !important
+    font-size: 14px !important
+    text-decoration: underline !important
+    &:hover
+        opacity: 80%
+        
 

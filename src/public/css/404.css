@@ -1,2 +1,7 @@
-img {
-  width: 100%; }
+.imagen {
+  width: 90%;
+  margin-block: 2.5rem; }
+
+@media only screen and (min-width: 1025px) {
+  .imagen {
+    width: 50%; } }

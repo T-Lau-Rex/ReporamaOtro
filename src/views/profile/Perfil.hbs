@@ -1,1 +1,20 @@
-<h3>soy un perfil</h3>
+<section class="seccion">
+    <div class="tarjeta">
+        <h1 class="titulo">{{user.nombre_usuario}}</h1>        
+        <h4 class="datosCuenta">Datos de la cuenta</h4>
+        <p class="datosCuenta">Nombre: {{user.nombre_usuario}}</p>
+        <p class="datosCuenta">Correo: {{user.correo}}</p>
+
+        {{#if user.foto_imagen}}
+        <p>Foto: {{user.foto_imagen}}</p>
+        {{/if}}
+
+        <div class="divAnadirMas">
+            <a class="crearCuenta btn btn-success px-4" href="/perfil/edit/{{id}}">EDITAR DATOS</a>
+        </div>
+        <div class="divAnadirMas">
+            <a class="crearCuenta btn btn-success px-4" href="/perfil/delete/{{id}}">ELIMINAR CUENTA</a>
+        </div>
+    </div>
+
+</section>

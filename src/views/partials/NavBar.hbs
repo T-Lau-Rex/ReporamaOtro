@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div id="contenedorNav" class="container-fluid">
     <div class="barra container-fluid">
-      <a class="navbar-brand" href="/"><img class="logo_Cuadrado" src="/img/icons/Logo-Reporama/Repo-Cuadro-Blanco-Transp.svg" alt="Reporama"></a>
+      <a class="navbar-brand" href="/home"><img class="logo_Cuadrado" src="/img/icons/Logo-Reporama/Repo-Cuadro-Blanco-Transp.svg" alt="Reporama"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         {{!-- <span class="navbar-toggler-icon"></span> --}}
         <div class="hamburguesa">
@@ -12,21 +12,77 @@
       </button>
     </div>
 
+
+
+ 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <ul class="navbar-nav">
         <li><hr class="lineaDivisora"></li>
+        
+
+        {{!-- codigo weno --}}
+
+        {{#if user}}
+
         <li class="nav-item">
-          <a class="nav-link" href="/">Perfil</a>
+          <a class="nav-link" href="/perfil">
+            <img class="iconoPerfil" src="/img/icons/Logo-Usuario.svg" alt="Icono perfil">
+            {{user.nombre_usuario}}
+          </a>
+        </li>
+
+        <!-- Principio experimento -->
+        <li class="nav-item">
+          <div class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Pedidos
+          </div>
+
+          <ul class="drpDwnNav dropdown-menu">
+            <li class="nav-item">
+              <a class="nav-link" href="/pedidos">Ver pedidos pendientes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pedido/add">Anotar pedido</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pedido/realizar">Realizar pedido</a>
+            </li>
+          </ul>
+
+        </li>
+        <!-- Fin experimento -->
+
+        <!-- Principio experimento -->
+        <li class="nav-item">
+          <div class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Comics
+          </div>
+
+          <ul class="drpDwnNav dropdown-menu">
+            <li class="nav-item">
+              <a class="nav-link" href="/comics/add">Añadir cómic</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/comics">Inventario</a>
+            </li>
+          </ul>
+
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/comics/add">Anotar pedido</a>
+          <a class="nav-link" href="/logout">Cerrar sesión</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/">Realizar pedido</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/comics">Inventario</a>
-        </li>
+        <!-- Fin experimento -->
+        {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">Regístrate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Inicia sesión</a>
+          </li>
+
+        {{/if}}
+        
+        <li><h3> </h3></li> {{!-- FIXME: si da tiempo quita este li y añade el margin con .sass --}}
       </ul>
     </div>
   </div>

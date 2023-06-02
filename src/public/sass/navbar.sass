@@ -3,14 +3,15 @@
 
 .navbar-toggler
   border: none !important
-  &:focus
+  &:focus //FIXME:
     @include focus
     
-  &:focus-visible
+  &:focus-visible //FIXME:
     @include focusVisible
 
 hr
   opacity: inherit !important
+  
 .burger
   background: none
   border: none
@@ -42,14 +43,16 @@ hr
 
 .logo_Cuadrado
   width: 45.86px
-.navbar-nav a
+.navbar-nav li
   color: $casiBlanco !important
   font-size: 23px
   font-weight: 700
   &:hover
-    color: $grisClaro !important
+    opacity: 80% !important
   &:focus
     color: $gris !important
+
+// .navbar-nav .navBarDrpDwnMio
 
 // "position: absolute; z-index: 999;"
 
@@ -58,26 +61,48 @@ hr
   padding-inline: 1rem !important
   // position: absolut
   position: absolute
-  z-index: 999
+  z-index: 24
   left: 0px
   top: 58px
   width: 100%
   background: #232F40
+  @media only screen and (min-width: 1025px)
+    display: flex
+
+.nav-link
+  &:hover
+    opacity: 80% !important
+
+.navBarDrpDwnMio
+
+
+.iconoPerfil
+  width: 30px
 
 .sombra
   width: 100%
   height: 100%
   background:  rgba(0, 0, 0, 0.4) 
 
-.lineaDivisora
+.lineaDivisora //FIXME:
   @include lineaVerde
+
+  @media only screen and (min-width: 1025px)
+    display: none !important
+
+
 
 #navbarNav
   width: 100% !important
   margin-inline: 0 !important
 
-.dropdown-menu
+.dropdown-menu //FIXME:
   @include desplegableInput
+  color: white !important
+
+.drpDwnNav
+  border: none !important
+  background: $marinoOscuro !important
 
 .container-fluid
   padding-inline: 0 !important
@@ -86,3 +111,8 @@ hr
   display: flex
   justify-content: space-between
   padding-inline: 1rem !important
+
+
+@media only screen and (min-width: 1025px)
+  .collapse
+    margin-top: -2rem

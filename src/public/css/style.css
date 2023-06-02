@@ -6,6 +6,9 @@
 
 body {
   background: #232F40; }
+  @media only screen and (min-width: 1025px) {
+    body {
+      padding-inline: 10rem; } }
 
 .mayusculas {
   font-size: 14px;
@@ -38,40 +41,6 @@ body {
 
 .seccion {
   padding: 2rem; }
-
-.seccionList {
-  padding: none !important;
-  background: #2B3B4F !important;
-  border-radius: 8px !important;
-  margin-inline: 22px !important;
-  padding: 4px !important;
-  margin-block: 12px; }
-
-.informacionComic {
-  font-size: 14px;
-  margin-bottom: 10px; }
-  .informacionComic p {
-    margin-bottom: .1rem; }
-  .informacionComic h3 {
-    margin-bottom: .1rem; }
-
-.disponible {
-  font-weight: bold; }
-
-.agotado {
-  font-weight: bold;
-  color: #ff5e00; }
-
-.descatalogado {
-  font-weight: bold;
-  color: #d41900; }
-
-.botonesInline {
-  display: flex;
-  justify-content: space-between; }
-
-.linkSeparacion {
-  width: 48% !important; }
 
 .btn {
   margin-top: 15px;
@@ -109,129 +78,9 @@ input {
   input:focus-visible {
     outline: none !important; }
 
+label {
+  font-size: 13px;
+  opacity: 80%; }
+
 .card-body {
   padding: none !important; }
-
-.form-control {
-  color: #8A8A8A !important;
-  border-radius: none !important;
-  margin-top: 10px;
-  margin-bottom: -5px !important; }
-  .form-control::placeholder {
-    color: #C8C8C8; }
-
-.form-select {
-  color: #8A8A8A !important;
-  width: 100%;
-  height: 50px;
-  padding: 8px;
-  font-size: 16px;
-  border: 1px solid #C8C8C8 !important;
-  border-bottom: 0px !important;
-  border-radius: 0px !important;
-  padding-inline: 18px;
-  margin-top: 10px;
-  margin-bottom: -5px !important; }
-  .form-select:focus-visible {
-    outline: none !important; }
-
-.dropdown-item {
-  color: #8A8A8A !important;
-  background: white !important;
-  padding-inline: 9px !important;
-  height: 30px !important;
-  padding-block: 3px !important;
-  margin-block: 2px !important; }
-  .dropdown-item:hover {
-    background: #C8C8C8 !important;
-    border-radius: 4px !important; }
-
-a {
-  color: #FAFAFA;
-  text-decoration: none !important; }
-
-.dropdown-divider {
-  background: #BEFFBE !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  margin-bottom: 6px !important;
-  opacity: none !important; }
-
-#mainHome {
-  padding: 15px; }
-
-.cardHome {
-  background: #232F40 !important; }
-
-#containerList {
-  display: flex;
-  justify-content: center;
-  background: #EDF2F7;
-  border-radius: 8px !important;
-  width: 82px;
-  height: 88px; }
-  #containerList h5 {
-    font-size: 24px !important;
-    font-weight: 700; }
-
-.parrafoHome {
-  font-size: 16px !important;
-  font-weight: 400;
-  opacity: 80% !important;
-  margin-left: 18px !important; }
-
-.circuloAdvertencia {
-  width: 10px;
-  height: 10px;
-  background: #ff5e00;
-  border-radius: 6px !important;
-  margin-top: 5px;
-  margin-right: 8px; }
-
-.fondo {
-  background: #2B3B4F;
-  border-radius: 8px !important;
-  margin-bottom: .5rem !important; }
-
-.iconosHome {
-  width: 55px; }
-
-.hache5 {
-  display: flex;
-  margin-top: 20px; }
-
-.divisorGordo {
-  background-color: #BEFFBE;
-  height: 5px !important;
-  border-radius: 3px !important;
-    border-radius-margin-bottom: 30px !important; }
-
-.cardStatics {
-  margin-top: 50px;
-  padding-block: 25px;
-  border-radius: 8px !important;
-  background: #232F40; }
-
-.estadisticas {
-  height: 200px;
-  background: #FAFAFA;
-  border-radius: 8px !important; }
-
-.divStatics {
-  padding-inline: 20px; }
-
-.h3Statics {
-  margin-top: 30px;
-  font-size: 20px;
-  font-weight: 600; }
-
-.enlaceSubrayado {
-  color: #FAFAFA;
-  text-decoration: underline;
-  font-size: 13px; }
-  .enlaceSubrayado:hover {
-    color: #C8C8C8; }
-
-.irDerecha {
-  width: 6px;
-  margin-left: 5px; }

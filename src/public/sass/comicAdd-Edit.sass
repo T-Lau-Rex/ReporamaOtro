@@ -1,0 +1,44 @@
+@import '_colores' 
+@import '_componentes'
+    
+
+.form-control
+  color: $gris !important
+  border-radius: none !important
+  margin-top: 10px
+  margin-bottom: -5px !important
+
+  &::placeholder
+    color: $grisClaro
+
+.form-select
+  color: $gris !important
+  width: 100%
+  height: 50px
+  padding: 8px
+  font-size: 16px
+  border: 1px solid $grisClaro !important
+  border-bottom: 0px !important
+  border-radius: 0px !important
+  padding-inline: 18px
+  margin-top: 10px
+  margin-bottom: -5px !important
+  &:focus-visible
+    outline: none !important
+
+.dropdown-item
+  color: $gris !important 
+  background: white !important
+  padding-inline: 9px !important
+  height: 30px !important
+  padding-block: 3px !important
+  margin-block: 2px !important
+  &:hover
+    background: $grisClaro !important
+    border-radius: 4px !important
+a
+  color: $casiBlanco
+  text-decoration: none !important
+
+.dropdown-divider
+  @include lineaVerde

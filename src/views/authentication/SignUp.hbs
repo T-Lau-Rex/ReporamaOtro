@@ -1,36 +1,141 @@
-<section class="seccion">
+{{!-- <section class="seccion">
     <div class="tarjeta">
         <h3 class="mayusculas">únete a reporama</h3>
-        <h1 class="titulo">Regístrate</h1>
-
-        {{!-- <p>Tendrás acceso de manera rápida a los pedidos que hayas realizado para no perder el hilo ;)</p> --}}
-        
+        <h1 class="titulo">Regístrate</h1>        
         <p>Para crear listas de colecciones, <span style="color: pink;">categorías, editoriales... </span> y realizar reposiciones de forma sencilla <img class="guinyo" src="/img/icons/smile1.png" alt="guinyo"></p>
 
-        {{!-- <p>Para crear listas de colecciones, <span style="color: pink;">categorías, editoriales... </span> y realizar reposiciones de forma sencilla <img class="guinyo" src="/img/icons/wink2.png" alt="guinyo"></p> --}}
-
-        <form action="/signup" method="post">
+        <form action="/signup" method="post" onsubmit="return validarFormulario()">
 
             <div class="input-group mb-3">
                 <input required type="text" class="inputNormal" name="nombre_usuario" placeholder="Nombre de usuario">
             </div>
 
             <div class="input-group mb-3">
-                <input required type="text" class="inputNormal" name="correo" placeholder="Correo">
+                <input required type="email" class="inputNormal" name="correo" placeholder="Correo">
             </div>
 
             <div class="input-group mb-3">
-                <input required type="text" class="inputNormal" name="contrasena1" placeholder="Contraseña">
+                <input required type="password" oninput="checkContrasena()" id="contrasena1" class="inputNormal" name="contrasena1" placeholder="Contraseña">
             </div>
 
             <div class="input-group mb-3">
-                <input required type="text" class="inputNormal" name="contrasena" placeholder="Repite la contraseña">
+                <input required type="password" oninput="checkContrasena()" id="contrasena2" class="inputNormal" name="contrasena" placeholder="Repite la contraseña">
             </div>
+
+            <span id="contrasenaMatchError"></span>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-success px-5">crear cuenta</button>
+                <button type="submit" class="btn btn-success px-4">crear cuenta</button>
             </div>
         </form>
 
     </div>
 </section>
+
+<script>
+    const checkContrasena = () => {
+        let contrasena1 = document.getElementById('contrasena1').value;
+        let contrasena2 = document.getElementById('contrasena2').value;
+        let contrasenaMatchError = document.getElementById('contrasenaMatchError');
+
+        if (contrasena1 !== contrasena2) {
+            contrasenaMatchError.textContent = 'No coinciden las contraseñas'
+        } else {
+            contrasenaMatchError.textContent = '';
+        }
+    }
+
+    const validarFormulario = () => {
+        let contrasena1 = document.getElementById('contrasena1').value;
+        let contrasena2 = document.getElementById('contrasena2').value;
+
+        if (contrasena1 !== contrasena2) {
+            let contrasenaMatchError = document.getElementById('contrasenaMatchError')
+        }
+    }
+
+    document.getElementById('contrasena1').addEventListener('input', checkContrasena)
+    document.getElementById('contrasena2').addEventListener('input', checkContrasena)
+</script> --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="seccion">
+    <div class="tarjeta">
+        <a href="/pachy"><h3 class="mayusculas">únete a reporama</h3></a>
+        <h1 class="titulo">Regístrate</h1>        
+        <p>Para crear listas de colecciones, <span style="color: pink;">categorías, editoriales... </span> y realizar reposiciones de forma sencilla <img class="guinyo" src="/img/icons/smile1.png" alt="guinyo"></p>
+
+        <form action="/signup" method="post" onsubmit="return validarFormulario()">
+
+            <div class="input-group mb-3">
+                <input required type="text" class="inputNormal" name="nombre_usuario" placeholder="Nombre de usuario">
+            </div>
+
+            <div class="input-group mb-3">
+                <input required type="email" class="inputNormal" name="correo" placeholder="Correo">
+            </div>
+
+            <div class="input-group mb-3">
+                <input required type="password" oninput="checkContrasena()" id="contrasena1" class="inputNormal" name="contrasena1" placeholder="Contraseña">
+            </div>
+
+            <div class="input-group mb-3">
+                <input required type="password" oninput="checkContrasena()" id="contrasena2" class="inputNormal" name="contrasena" placeholder="Repite la contraseña">
+            </div>
+
+            <span id="contrasenaMatchError" class="contrasenaMatchError"></span>
+
+            <div class="form-group">
+                <button type="submit" class="crearCuenta btn btn-success px-4">crear cuenta</button>
+            </div>
+            <span id="datosMatchError" class="datosMatchError"></span>
+        </form>
+
+    </div>
+</section>
+
+<script>
+    const checkContrasena = () => {
+        let contrasena1 = document.getElementById('contrasena1').value;
+        let contrasena2 = document.getElementById('contrasena2').value;
+        let contrasenaMatchError = document.getElementById('contrasenaMatchError');
+
+        if (contrasena1 !== contrasena2) {
+            contrasenaMatchError.textContent = 'No coinciden las contraseñas';
+        } else {
+            contrasenaMatchError.textContent = '';
+        }
+    }
+
+    const validarFormulario = () => {
+        let contrasena1 = document.getElementById('contrasena1').value;
+        let contrasena2 = document.getElementById('contrasena2').value;
+
+        if (contrasena1 !== contrasena2) {
+            let contrasenaMatchError = document.getElementById('contrasenaMatchError');
+            contrasenaMatchError.textContent = 'No coinciden las contraseñas';
+            
+            let datosMatchError = document.getElementById('datosMatchError');
+            datosMatchError.textContent = 'Ingresa los datos correctos';
+
+            return false; // Cancelar el envío del formulario
+        }
+
+        return true; // Permitir el envío del formulario
+    }
+
+    document.getElementById('contrasena1').addEventListener('input', checkContrasena);
+    document.getElementById('contrasena2').addEventListener('input', checkContrasena);
+</script>

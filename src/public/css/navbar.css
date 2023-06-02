@@ -41,24 +41,33 @@ hr {
 .logo_Cuadrado {
   width: 45.86px; }
 
-.navbar-nav a {
+.navbar-nav li {
   color: #FAFAFA !important;
   font-size: 23px;
   font-weight: 700; }
-  .navbar-nav a:hover {
-    color: #C8C8C8 !important; }
-  .navbar-nav a:focus {
+  .navbar-nav li:hover {
+    opacity: 80% !important; }
+  .navbar-nav li:focus {
     color: #8A8A8A !important; }
 
 .navbar-nav {
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
   padding-inline: 1rem !important;
   position: absolute;
-  z-index: 999;
+  z-index: 24;
   left: 0px;
   top: 58px;
   width: 100%;
   background: #232F40; }
+  @media only screen and (min-width: 1025px) {
+    .navbar-nav {
+      display: flex; } }
+
+.nav-link:hover {
+  opacity: 80% !important; }
+
+.iconoPerfil {
+  width: 30px; }
 
 .sombra {
   width: 100%;
@@ -71,6 +80,9 @@ hr {
   margin: 0 !important;
   margin-bottom: 6px !important;
   opacity: none !important; }
+  @media only screen and (min-width: 1025px) {
+    .lineaDivisora {
+      display: none !important; } }
 
 #navbarNav {
   width: 100% !important;
@@ -82,8 +94,13 @@ hr {
   margin-top: -15px !important;
   border: 1px solid #C8C8C8 !important;
   border-top: none !important;
-  color: #8A8A8A !important;
-  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25); }
+  color: #8A8A8A;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+  color: white !important; }
+
+.drpDwnNav {
+  border: none !important;
+  background: #232F40 !important; }
 
 .container-fluid {
   padding-inline: 0 !important; }
@@ -92,3 +109,7 @@ hr {
   display: flex;
   justify-content: space-between;
   padding-inline: 1rem !important; }
+
+@media only screen and (min-width: 1025px) {
+  .collapse {
+    margin-top: -2rem; } }

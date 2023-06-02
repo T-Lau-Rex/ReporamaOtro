@@ -1,0 +1,58 @@
+.seccionList {
+  padding: none !important;
+  background: #2B3B4F !important;
+  border-radius: 8px !important;
+  margin-inline: 22px !important;
+  padding: 4px !important;
+  margin-block: 12px; }
+
+.informacionComic {
+  font-size: 14px;
+  margin-bottom: 10px; }
+  .informacionComic p {
+    margin-bottom: .1rem; }
+  .informacionComic h3 {
+    margin-bottom: .1rem; }
+
+.disponible {
+  font-weight: bold; }
+
+.agotado {
+  font-weight: bold;
+  color: #ff5e00; }
+
+.descatalogado {
+  font-weight: bold;
+  color: #d41900; }
+
+.divAnadirMas {
+  margin: 20px; }
+
+.anadirMas {
+  color: #BEFFBE !important; }
+  .anadirMas:hover {
+    opacity: 80%; }
+
+.botonesInline {
+  display: flex;
+  justify-content: space-between; }
+
+.linkSeparacion {
+  width: 48% !important;
+  color: #BEFFBE !important; }
+  .linkSeparacion:hover {
+    opacity: 80%; }
+
+.noComics {
+  display: block;
+  padding-block: 20px;
+  text-align: center; }
+  .noComics p {
+    margin-bottom: 8px; }
+  .noComics .cajaVacia {
+    margin-top: 20px;
+    width: 60%; }
+    @media only screen and (min-width: 1025px) {
+      .noComics .cajaVacia {
+        width: 25%;
+        margin-top: 50px; } }

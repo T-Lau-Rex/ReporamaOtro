@@ -8,5 +8,5 @@ export const database = {
     host: "localhost",
     user: "root",
     password: "root",
-    database: "reporamaaaaa"
+    database: "reporama2"
 }

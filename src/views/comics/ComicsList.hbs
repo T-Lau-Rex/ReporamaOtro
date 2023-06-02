@@ -29,10 +29,24 @@
 
 
 <section class="seccionList">
+    <div class="atraTarjeta">
+        <h3 class="mayusculas">Todos los cómics</h3> 
+        <h1 class="titulo">Listado</h1>        
+        {{!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor nobis ut consectetur necessitatibus dolorum</p> --}}
+    </div>
+
+    <div class="divAnadirMas">
+        
+        {{!-- <button type="button"  class="crearCuenta btn btn-success px-4">Añadir más cómics</button> --}}
+        <a class="crearCuenta btn btn-success px-4" href="/comics/add">Añadir más cómics</a>
+        {{!-- <a class="anadirMas" href="/comics/add">Añadir más cómics</a> --}}
+    </div>
+
     {{#if comicsCompletos}}
     {{#each comicsCompletos}}
     <div class="card" style="width: 18rem;">
-        <iv class="comics card-body">
+        <div class="comics card-body">
+            
 
             <div class="informacionComic">
                 <h3>{{titulo}} Vol. {{volumen}}</h3>
@@ -60,7 +74,13 @@
     </div>
     {{/each}}
     {{else}}
-    <p>No hay cómics disponibles.</p>
+    <div class="noComics">
+        <div>
+            <p>No hay cómics disponibles.</p>
+            <a class="enlaces" href="/comics/add">¡Añade el primero!</a>
+        </div>
+        <img class="cajaVacia" src="/img/extras/cajaVacia.svg" alt="Caja vacía">
+    </div>
     {{/if}}
 
 </section>

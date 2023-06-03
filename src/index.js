@@ -15,6 +15,9 @@ import passport from "passport";
 import path from "path";
 import { registerHelper } from "./lib/handlebars.js";
 import router from "./routes/routes.js";
+import routerComic from "./routes/comicsRoutes.js";
+import routerPedidos from "./routes/pedidosRoutes.js";
+import routerUsers from "./routes/trabajadoresRoutes.js";
 import session from "express-session";
 
 // INICIALIZACIONES
@@ -74,6 +77,10 @@ app.use((req, res, next) => {
 // RUTAS
 
 app.use("/", router);
+app.use("/comics", routerComic);
+app.use("/", routerUsers);
+app.use("/", routerPedidos);
+
 // app.use("/comics", router);
 
 // ARCHIVOS PÚBLICOS

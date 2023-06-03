@@ -1,0 +1,17 @@
+<section>
+    {{#if pedidos}}
+    <div class="cardStatics" style="max-width: 540px;">
+        <h3 class="mayusculas"></h3>
+        <h1 class="titulo">Pedidos realizados</h1>
+        <ul>
+    {{#each pedidos}}
+            <li class="listaPedidos">
+                <p>{{id}} | {{id_categoria}} | {{id_editorial}} | {{fecha_pedido}}</p>
+                {{!-- <a class="enlaces" href="/pedidos/pendiente/{{id}}">Manga | Planeta | 23/01/2023</a> --}}
+            </li>
+    {{/each}}
+        </ul>
+    </div>
+    {{/if}}
+
+</section>

@@ -1,39 +1,57 @@
 <section class="seccion">
     <div class="tarjeta">
-        <h3 class="mayusculas">Empecemos por el principio </h3>
-        <h1 class="titulo">Crea un pedido</h1>
-        <p>Primero escoge la categoría (Clásico, Superhéroes, Manga...) y continúa con la editorial</p>
-        <form action="/comic-pedido/add" method="post">
+        <h3 class="mayusculas">ve añadiendo los que quieras</h3>
+        <h1 class="titulo">Selecciona los cómics</h1>
+        <p>Pulsa añadir para incluirlos en tu pedido y cuando los tengas todos, pulsa completar pedido. ¡Listo!</p>
+        <form action="/comic-pedido/add/{{pedidoId}}" method="post">
 
             <div class="input-group mb-3">
                 <input required type="text" class="form-select dropdown-toggle" name="titulo" data-bs-toggle="dropdown" aria-expanded="false" placeholder="Selecciona Título">
                 <ul class="dropdown-menu">
                     <hr class="lineaDivisora dropdown-divider">
-                    {{#each comicPedido}}
+                    {{#each comictitulo}}
                         <li class="dropdown-item select-option">{{titulo}}</li>
                     {{/each}}
                 </ul>
             </div>
 
             <div class="input-group mb-3">
-                <input required type="text" class="form-select dropdown-toggle" name="titulo" data-bs-toggle="dropdown" aria-expanded="false" placeholder="Selecciona Volúmen">
-                <ul class="dropdown-menu">
-                    <hr class="lineaDivisora dropdown-divider">
-                    {{#each comicPedido}}
-                        <li class="dropdown-item select-option">{{volumen}}</li>
-                    {{/each}}
-                </ul>
+                <input type="number" class="form-control" name="volumen" placeholder="Selecciona Volumen">
             </div>
-
             <div class="input-group mb-3">
                 <input type="number" class="form-control" name="cantidad" placeholder="Cantidad de ejemplares">
             </div>
 
+            <div class="input-group mb-3">
+                <textarea name="notas" id="miTextarea" class="form-control" rows="3" placeholder="Notas"></textarea>
+            </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-success px-4">GUARDAR</button>
+                <button type="submit" class="btn btn-success px-4">AÑADIR</button>
             </div>
         </form>
+        {{#if elementosPedido}}
+            <div id="cardAnadidos" class="cardStatics" style="max-width: 540px;">
+                <h1 class="titulo">Añadidos</h1>
+                <div id="anadidos">
+                    <h3 class="mayusculas">título</h3>
+                    <h3 class="mayusculas">ejemplares</h3>
+                </div>
+                <ul id="bulletPoints">
+                    {{#each elementosPedido}}
+                    <li id="ejemplares">
+                        <p class="">{{titulo}} vol. {{volumen}}</p>
+                        <p class="">{{cantidad}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
+                
+                <div id="divCompletarBoton" class="form-group">
+                    <a id="completarBoton" class="btn btn-success px-4" href="/pedidos-pendientes/{{pedidoId}}">COMPLETAR PEDIDO</a>
+                </div>
+                
+            </div>
+        {{/if}}
     </div>
 </section>
 

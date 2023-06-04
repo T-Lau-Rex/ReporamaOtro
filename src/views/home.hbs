@@ -1,8 +1,7 @@
 <main id="mainHome">
-
     <div class="cardHome" style="max-width: 540px;">
         <div class="containerHome">
-            <a href="/">
+            <a href="/pedido/add">
                 <div class="fondo">
                     <div id="containerList">
                         <img class="iconosHome" src="/img/Home/Anotar1-1.svg" class="img-fluid rounded-start" alt="Anotar" />
@@ -12,10 +11,9 @@
             <div>
                 <div class="card-title">
                     <div class="hache5">
-                        <div class="circuloAdvertencia"></div>
-                        <a href="/"><h5>Anotar pedido</h5></a>
+                        <a href="/pedido/add"><h5>Anotar pedido</h5></a>
                     </div>
-                    <p class="parrafoHome">Terminar de anotar 1 pedido</p>
+                    <p class="parrafoHome">Toma nota de los comics que están para reponer</p>
                     <hr class="divisorGordo">
                 </div>
             </div>
@@ -24,7 +22,7 @@
 
     <div class="cardHome" style="max-width: 540px;">
         <div class="containerHome">
-            <a href="/">
+            <a href="/pedidos-pendientes">
                 <div class="fondo">
                     <div id="containerList">
                         <img class="iconosHome" src="/img/Home/Pedido4-1.svg" class="img-fluid rounded-start" alt="Anotar" />
@@ -34,10 +32,16 @@
             <div>
                 <div class="card-title">
                     <div class="hache5">
+                        {{#if pendiente}}
                         <div class="circuloAdvertencia"></div>
-                        <a href="/"><h5>Realizar pedido</h5></a>
+                        {{/if}}
+                        <a href="/pedidos-pendientes"><h5>Realizar pedido</h5></a>
                     </div>
-                    <p class="parrafoHome">2 Pedidos pendientes</p>
+                    {{#if pendiente}}
+                    <p class="parrafoHome">Tienes pedidos pendientes</p>
+                    {{else}}
+                    <p class="parrafoHome">Ningún pedido pendiente ¡Vacaciones!</p>
+                    {{/if}}
                     <hr class="divisorGordo">
                 </div>
             </div>
@@ -56,7 +60,6 @@
             <div>
                 <div class="card-title">
                     <div class="hache5">
-                        <div class="circuloAdvertencia"></div> 
                         <a href="/comics"><h5>Inventario</h5></a>
                     </div>
                     <p class="parrafoHome">Todas las colecciones y ejemplares ordenador por criterios de búsqueda</p>

@@ -3,7 +3,6 @@
 import './lib/passport.js'
 
 import MySQLStore from "express-mysql-session";
-import cors from "cors";
 import { database } from './config/keys.js';
 import dotenv from "dotenv";
 import exphbs from "express-handlebars";
@@ -16,6 +15,7 @@ import path from "path";
 import { registerHelper } from "./lib/handlebars.js";
 import router from "./routes/routes.js";
 import routerComic from "./routes/comicsRoutes.js";
+import routerComicsPedidos from './routes/comicPedidoRoutes.js';
 import routerPedidos from "./routes/pedidosRoutes.js";
 import routerUsers from "./routes/trabajadoresRoutes.js";
 import session from "express-session";
@@ -44,9 +44,15 @@ app.engine(
     layoutDir: path.join(views, "layouts"),
     partialsDir: path.join(views, "partials"),
     extname: ".hbs",
+    helpers: {
+      formatDate: function(date) {
+        return new Date(date).toLocaleDateString('es-ES', { year: 'numeric', month: 'numeric', day: 'numeric' });
+      }
+    }
   })
 );
 app.set("view engine", ".hbs");
+
 
 // MIDDLEWARES
 
@@ -61,7 +67,6 @@ app.use(flash())
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-// app.use(cors());
 app.use(passport.initialize())
 app.use(passport.session())
 
@@ -80,8 +85,7 @@ app.use("/", router);
 app.use("/comics", routerComic);
 app.use("/", routerUsers);
 app.use("/", routerPedidos);
-
-// app.use("/comics", router);
+app.use("/", routerComicsPedidos);
 
 // ARCHIVOS PÚBLICOS
 

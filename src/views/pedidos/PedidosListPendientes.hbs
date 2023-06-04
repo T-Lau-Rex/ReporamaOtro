@@ -1,29 +1,35 @@
-<section>
-    {{#if pedidos}}
-    <div class="cardStatics" style="max-width: 540px;">
+<section class="seccion">
+    <div class="tarjeta">
         <h3 class="mayusculas"></h3>
         <h1 class="titulo">Pedidos pendientes</h1>
-        <ul>
-    {{#each pedidos}}
+        <p>Accede a todos los pedidos pendientes de realizar. Pulsa FINALIZAR cuando estén completados</p>
+    
+        {{#if pedidos}}
+            
+        <ul id="ulListaPedidos">
+        {{#each pedidos}}
             <li class="listaPedidos">
                 <form action="/pedidos-pendientes/complete/{{id}}" method="post">
-                    <a class="enlaces" href="/pedidos-pendientes/{{id}}">{{id}} | {{id_categoria}} | {{id_editorial}} | {{fecha_pedido}}</a>
+                    <a class="enlaces" href="/pedidos-pendientes/{{id}}">{{id}} | {{nombre_categoria}} | {{nombre_editorial}} | {{ formatDate fecha_pedido}}</a>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success px-4">FINALIZAR</button>
+                        <button id="finalizar" type="submit" class="btn btn-success px-4">FINALIZAR</button>
                     </div>
                 </form>
             </li>
-    {{/each}}
+        {{/each}}
         </ul>
-    </div>
-    {{else}}
-    <div class="noComics">
-        <div>
-            <p>No hay pedidos disponibles.</p>
-            <a class="enlaces" href="/pedidos/add">¡Añade el uno!</a>
+        
+        {{else}}
+        <div class="noComics">
+            <div>
+                <p>No hay pedidos pendientes.</p>
+                <a class="enlaces" href="/pedido/add">¡Crea el uno!</a>
+            </div>
+            <img class="cajaVacia" src="/img/extras/cajaVacia.svg" alt="Caja vacía">
         </div>
-        <img class="cajaVacia" src="/img/extras/cajaVacia.svg" alt="Caja vacía">
+        
+        {{/if}}
     </div>
-    {{/if}}
 
+    
 </section>

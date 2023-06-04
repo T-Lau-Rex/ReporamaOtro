@@ -1,0 +1,27 @@
+<section class="seccion">    
+    <div class="tarjeta">
+        <h1 class="titulo">Ejemplares</h1>
+        <div id="anadidos">
+            <h3 class="mayusculas">título</h3>
+            <h3 class="mayusculas">ejemplares</h3>
+        </div>
+        
+        <form action="/pedidos-pendientes/complete/{{id}}" method="post">
+            <ul id="bulletPoints">
+                {{#each comicsPedidos}}
+                <li id="ejemplares">
+                    <p class="">{{tituloCompleto}}</p>
+                    <p class="">{{cantidad}}</p>
+                </li>
+                {{/each}}
+            </ul>
+            
+            <div id="divCompletarBoton" class="form-group">
+                <a id="completarBoton" class="btn btn-success px-4" href="/comic-pedido/add/{{id}}">AÑADIR EJEMPLARES</a>
+            </div>
+            <div id="divCompletarBoton" class="form-group">
+                <button id="completarBoton" type="submit" class="btn btn-success px-4">COMPLETAR PEDIDO</button>
+            </div>
+        </form>
+    </div>
+</section>

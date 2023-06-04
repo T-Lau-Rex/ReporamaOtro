@@ -1,5 +1,4 @@
 export const database = {
-
     // host: process.env.HOST,
     // user: process.env.USER,
     // password: process.env.PASSWORD,
@@ -8,5 +7,5 @@ export const database = {
     host: "localhost",
     user: "root",
     password: "root",
-    database: "reporama2"
+    database: "reporama3"
 }

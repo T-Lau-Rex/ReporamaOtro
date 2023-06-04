@@ -1,47 +1,48 @@
 @import '_colores' 
 @import '_componentes'
-//importa el contenido del archivo al que hace referencia 
   
-*//FIXME: DONE
+*
   font-family: 'Raleway', sans-serif
   color: $casiBlanco
   border-radius: 0px !important
   letter-spacing: 1px !important
 
-body //FIXME: DONE
+body
+  position: relative
+  z-index: -2
   background: $marinoOscuro
   @media only screen and (min-width: 1025px)
     padding-inline: 10rem 
 
-.mayusculas //FIXME: DONE
+.mayusculas
   font-size: 14px
   font-weight: 500
   letter-spacing: 0.15em
   text-transform: uppercase
 
-.titulo //FIXME: DONE
+.titulo
   font-size: 32px
   font-weight: 700
   line-height: 48px
   font-feature-settings: 'pnum' on, 'lnum' on, 'liga' off
 
-.parrafo //FIXME: DONE
+.parrafo
   font-size: 16px
   font-weight: 400
 
-.tarjeta //TODO:
+.tarjeta
   @include tarjeta
 
-.card //TODO:
+.card
   @include cartel
 
-.seccion //TODO:
+.seccion 
   padding: 2rem
 
-.btn //TODO:
+.btn
   @include boton 
 
-input //TODO:
+input
   color: $gris !important
   width: 100%
   height: 50px
@@ -62,191 +63,12 @@ label
   font-size: 13px
   opacity: 80%
   
-.card-body //FIXME: DONE ?????
+.card-body 
   padding: none !important
 
-
-// // ComicList
-
-// .seccionList
-//   @include seccion
-
-// .informacionComic
-//   font-size: 14px
-//   margin-bottom: 10px
-//   p
-//     margin-bottom: .1rem
-//   h3
-//     margin-bottom: .1rem
-  
-// .disponible
-//   font-weight: bold
-
-// .agotado
-//   font-weight: bold
-//   color: $naranjaRojo
-
-// .descatalogado
-//   font-weight: bold
-//   color: $rojoOscuro
-
-// .divAnadirMas
-//   margin: 20px
-
-// .anadirMas
-//   color: $verdeClaro !important
-  
-//   &:hover
-//     opacity: 80%
-
-// .botonesInline
-//   display: flex
-//   justify-content: space-between  
-
-// .linkSeparacion
-//   width: 48% !important
-//   color: $verdeClaro !important
-//   &:hover
-//     opacity: 80%
-
-// .noComics
-//   display: block
-//   padding-block: 20px
-//   text-align: center
-//   p
-//     margin-bottom: 8px
-//   .cajaVacia
-//     margin-top: 20px
-//     width: 60%
-
-
-  // ========== COMUN ==========
-
-
-//     //Formulario ComicAdd/ComicEdit
-
-// .form-control
-//   color: $gris !important
-//   border-radius: none !important
-//   margin-top: 10px
-//   margin-bottom: -5px !important
-
-//   &::placeholder
-//     color: $grisClaro
-
-// .form-select
-//   color: $gris !important
-//   width: 100%
-//   height: 50px
-//   padding: 8px
-//   font-size: 16px
-//   border: 1px solid $grisClaro !important
-//   border-bottom: 0px !important
-//   border-radius: 0px !important
-//   padding-inline: 18px
-//   margin-top: 10px
-//   margin-bottom: -5px !important
-//   &:focus-visible
-//     outline: none !important
-
-// .dropdown-item
-//   color: $gris !important 
-//   background: white !important
-//   padding-inline: 9px !important
-//   height: 30px !important
-//   padding-block: 3px !important
-//   margin-block: 2px !important
-//   &:hover
-//     background: $grisClaro !important
-//     border-radius: 4px !important
-// a
-//   color: $casiBlanco
-//   text-decoration: none !important
-
-// .dropdown-divider
-//   @include lineaVerde
-
-// // home.hbs
-
-// #mainHome
-//   padding: 15px
-
-// .cardHome 
-//   background: $marinoOscuro !important
-
-// #containerList
-//   display: flex
-//   justify-content: center
-//   background: $grisMuyClaro
-//   border-radius: 8px !important
-//   width: 82px
-//   height: 88px
-//   h5
-//     // margin-top: .5rem !important 
-//     font-size: 24px !important
-//     font-weight: 700
-// .parrafoHome
-//   font-size: 16px !important
-//   font-weight: 400
-//   opacity: 80% !important
-//   margin-left: 18px !important
-
-// .circuloAdvertencia
-//     width: 10px
-//     height: 10px
-//     background: $naranjaRojo
-//     border-radius: 6px !important
-//     margin-top: 5px 
-//     margin-right: 8px
-// .fondo
-//   background: $marinoClaro
-//   border-radius: 8px !important
-//   margin-bottom: .5rem !important
-
-// .iconosHome  
-//   width: 55px
-
-// .hache5
-//    display: flex
-//    margin-top: 20px
-
-// .divisorGordo
-// 	background-color: $verdeClaro
-// 	height: 5px !important
-// 	border-radius: 3px !important
-//   margin-bottom: 30px !important
-
-//       // Statics
-
-// .cardStatics
-//   z-index: 7
-//   margin-top: 50px
-//   padding-block: 25px
-//   border-radius: 8px !important
-//   background: $marinoOscuro
-
-// .estadisticas
-//   height: 200px
-//   background: $casiBlanco
-//   border-radius: 8px !important
-
-// .divStatics
-//   padding-inline: 20px 
-
-// .h3Statics  
-//   margin-top: 30px
-//   font-size: 20px
-//   font-weight: 600
-
-// .enlaceSubrayado
-//   color: $casiBlanco
-//   text-decoration: underline !important
-//   font-size: 13px
-//   opacity: 80% 
-//   &:hover
-//     opacity: 60% !important
-//     color: $casiBlanco
-    
-//   .irDerecha
-//     width: 6px
-//     margin-left: 5px
+.logoFuturama
+  width: 80%
+#cajaLogoFutu
+  display: flex
+  justify-content: center
+  margin-top: 3rem

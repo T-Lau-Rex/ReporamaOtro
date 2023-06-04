@@ -13,8 +13,9 @@ routerComic.get('/', isLogedIn, async (req, res) => {
     (`SELECT comic.id, comic.titulo, comic.volumen, categorias.nombre_categoria, editoriales.nombre_editorial, comic.estado
     FROM comic
     LEFT JOIN categorias ON comic.id_categoria = categorias.id
-    LEFT JOIN editoriales ON comic.id_editorial = editoriales.id`)
-    console.log('comicsCompletos')
+    LEFT JOIN editoriales ON comic.id_editorial = editoriales.id
+    ORDER BY comic.titulo ASC, comic.volumen ASC`)
+    
     res.render('comics/ComicsList', {comicsCompletos})
 })
 
@@ -42,7 +43,6 @@ routerComic.get('/add', isLogedIn, async (req, res) => {
 
 routerComic.post('/add', isLogedIn, async (req, res) => {
     const { nombre_categoria, nombre_editorial, titulo, volumen, estado } = req.body
-    // const { id } = req.params
 
     // Traigo los id o inserto categorias
     let id_categoria = await pool.query(`SELECT id FROM categorias WHERE nombre_categoria = ?`, [nombre_categoria])
@@ -132,6 +132,5 @@ routerComic.post('/edit/:id', isLogedIn, async (req, res) => {
     req.flash('success', 'Comic editado correctamente')
     res.redirect('/comics')
 })
-
 
 export default routerComic

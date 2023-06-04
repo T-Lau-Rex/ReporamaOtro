@@ -5,6 +5,8 @@
   letter-spacing: 1px !important; }
 
 body {
+  position: relative;
+  z-index: -2;
   background: #232F40; }
   @media only screen and (min-width: 1025px) {
     body {
@@ -84,3 +86,11 @@ label {
 
 .card-body {
   padding: none !important; }
+
+.logoFuturama {
+  width: 80%; }
+
+#cajaLogoFutu {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem; }

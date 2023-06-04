@@ -1,53 +1,15 @@
-{{!-- <section class="seccionList">
-    {{#if comicsCompletos}}
-    {{#each comicsCompletos}}
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h2>{{titulo}}</h2>
-            <h3 class="mb-2">Vol. {{volumen}}</h3>
-            <h4 class="mb-2">Categoría: {{nombre_categoria}}</h4>
-            <p class="card-text">Editorial: {{nombre_editorial}}</p>
-            {{#ifEquals estado 'Disponible'}}
-            <p class="card-text">Disponibilidad en la editorial: <span style="font-weight:bold; color: green;">{{estado}}</span></p>
-            {{else}}
-            {{#ifEquals estado 'Agotado'}}
-            <p class="card-text">Disponibilidad en la editorial: <span style="font-weight:bold; color: rgb(255, 136, 0);">{{estado}}</span></p>
-            {{else}}
-            <p class="card-text">Disponibilidad en la editorial: <span style="font-weight:bold; color: red;">{{estado}}</span></p>
-            {{/ifEquals}}
-            {{/ifEquals}}
-            <a class=" btn btn-primary" href="/comics/edit/{{id}}">EDITAR</a>
-            <a class=" btn btn-danger" href="/comics/delete/{{id}}">ELIMINAR</a>
-            <a class=" btn btn-success" href="/comics/mostrar/{{id}}">VER</a>
-        </div>
-    </div>
-    {{/each}}
-    {{else}}
-    <p>No hay cómics disponibles.</p>
-    {{/if}}
-</section> --}}
-
-
 <section class="seccionList">
     <div class="otraTarjeta">
         <h3 class="mayusculas">Todos los cómics</h3> 
         <h1 class="titulo">Listado</h1>        
-        {{!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor nobis ut consectetur necessitatibus dolorum</p> --}}
     </div>
-
-    <div class="divAnadirMas">
-        
-        {{!-- <button type="button"  class="crearCuenta btn btn-success px-4">Añadir más cómics</button> --}}
-        <a class="crearCuenta btn btn-success px-4" href="/comics/add">Añadir más cómics</a>
-        {{!-- <a class="anadirMas" href="/comics/add">Añadir más cómics</a> --}}
-    </div>
-
     {{#if comicsCompletos}}
+    <div class="divAnadirMas">
+        <a class="crearCuenta btn btn-success px-4" href="/comics/add">Añadir más cómics</a>
+    </div>
     {{#each comicsCompletos}}
     <div class="card" style="width: 18rem;">
         <div class="comics card-body">
-            
-
             <div class="informacionComic">
                 <h3>{{titulo}} Vol. {{volumen}}</h3>
                 <p>{{nombre_categoria}}, Editorial: {{nombre_editorial}}</p>
@@ -68,7 +30,6 @@
             <div class="botonesInline">
                 <a class="linkSeparacion" href="/comics/edit/{{id}}">EDITAR</a>
                 <a class="linkSeparacion" href="/comics/delete/{{id}}">ELIMINAR</a>
-                {{!-- <a class=" btn btn-success" href="/comics/mostrar/{{id}}">VER</a> --}}
             </div>
         </div>
     </div>
@@ -82,5 +43,4 @@
         <img class="cajaVacia" src="/img/extras/cajaVacia.svg" alt="Caja vacía">
     </div>
     {{/if}}
-
 </section>

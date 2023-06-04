@@ -45,8 +45,6 @@ hr {
   color: #FAFAFA !important;
   font-size: 23px;
   font-weight: 700; }
-  .navbar-nav li:hover {
-    opacity: 80% !important; }
   .navbar-nav li:focus {
     color: #8A8A8A !important; }
 
@@ -100,7 +98,16 @@ hr {
 
 .drpDwnNav {
   border: none !important;
-  background: #232F40 !important; }
+  background: #232F40 !important;
+  width: 100%;
+  padding: 1rem; }
+
+#sinsombra {
+  box-shadow: none !important;
+  position: absolute;
+  top: auto;
+  width: 100% !important;
+  padding-inline: 1rem; }
 
 .container-fluid {
   padding-inline: 0 !important; }

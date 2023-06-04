@@ -5,10 +5,6 @@
         <p class="datosCuenta">Nombre: {{user.nombre_usuario}}</p>
         <p class="datosCuenta">Correo: {{user.correo}}</p>
 
-        {{#if user.foto_imagen}}
-        <p>Foto: {{user.foto_imagen}}</p>
-        {{/if}}
-
         <div class="divAnadirMas">
             <a class="crearCuenta btn btn-success px-4" href="/perfil/edit/{{id}}">EDITAR DATOS</a>
         </div>

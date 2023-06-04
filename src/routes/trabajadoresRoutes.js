@@ -9,13 +9,10 @@ const routerUsers = Router()
 
 
 routerUsers.get('/perfil', isLogedIn, async (req, res) => {
-    // const infoTrabajador = await pool.query(`SELECT * FROM trabajadores WHERE id = ?`, [req.user.id])
     res.render('profile/Perfil')
 }) 
 
-
 // =============================== TRABAJADORES ============================== //
-
 
 // Mostrar formulario añadir Trabajador GET UN TRABAJADOR:
 
@@ -57,15 +54,5 @@ routerUsers.get('/logout', isLogedIn, (req, res) => {
         res.redirect('/login')
     })
 })
-
-// Eliminar un Trabajador GET EL TRABAJADOR FUERA:
-
-
-
-// Editar un Trabajador GET EL TRABAJADOR CON SU INFO:
-
-
-
-// Editar un Trabajador POST LA  INFO DEL TRABAJADOR:
 
 export default routerUsers

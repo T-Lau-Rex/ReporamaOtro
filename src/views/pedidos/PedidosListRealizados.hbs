@@ -1,17 +1,30 @@
-<section>
-    {{#if pedidos}}
-    <div class="cardStatics" style="max-width: 540px;">
+<section class="seccion">    
+    <div class="tarjeta">
         <h3 class="mayusculas"></h3>
         <h1 class="titulo">Pedidos realizados</h1>
-        <ul>
-    {{#each pedidos}}
-            <li class="listaPedidos">
-                <p>{{id}} | {{id_categoria}} | {{id_editorial}} | {{fecha_pedido}}</p>
-                {{!-- <a class="enlaces" href="/pedidos/pendiente/{{id}}">Manga | Planeta | 23/01/2023</a> --}}
-            </li>
-    {{/each}}
-        </ul>
-    </div>
-    {{/if}}
+        <p>Histórico de todos los pedidos realizados. Selecciona uno para ver su contenido</p>
+    
+        {{#if pedidos}}
+            
+        <ul id="ulListaPedidos">
 
+            {{#each pedidos}}
+            <li style="display: flex; justify-content: space-between" class="listaPedidos">
+                <p>{{id}} | {{nombre_categoria}} | {{nombre_editorial}} | {{formatDate fecha_pedido}}</p>
+                <a class="enlaces" href="/pedidos-realizados/{{id}}">Ver</a>
+            </li>
+            {{/each}}
+        </ul>
+        
+        {{else}}
+        <div class="noComics">
+            <div>
+                <p>No hay pedidos realizados.</p>
+                <a class="enlaces" href="/pedidos-pendientes">¡Vamos a los pendientes!</a>
+            </div>
+            <img class="cajaVacia" src="/img/extras/cajaVacia.svg" alt="Caja vacía">
+        </div>
+
+        {{/if}}
+    </div>
 </section>

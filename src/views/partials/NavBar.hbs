@@ -3,7 +3,6 @@
     <div class="barra container-fluid">
       <a class="navbar-brand" href="/home"><img class="logo_Cuadrado" src="/img/icons/Logo-Reporama/Repo-Cuadro-Blanco-Transp.svg" alt="Reporama"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        {{!-- <span class="navbar-toggler-icon"></span> --}}
         <div class="hamburguesa">
             <span class="bar"></span>
             <span class="bar"></span> 
@@ -11,17 +10,10 @@
           </div>
       </button>
     </div>
-
-
-
- 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <ul class="navbar-nav">
         <li><hr class="lineaDivisora"></li>
         
-
-        {{!-- codigo weno --}}
-
         {{#if user}}
 
         <li class="nav-item">
@@ -31,34 +23,32 @@
           </a>
         </li>
 
-        <!-- Principio experimento -->
         <li class="nav-item">
           <div class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             Pedidos
           </div>
 
-          <ul class="drpDwnNav dropdown-menu">
-            <li class="nav-item">
-              <a class="nav-link" href="/pedidos">Ver pedidos pendientes</a>
-            </li>
+          <ul id="sinsombra" class=" drpDwnNav dropdown-menu">
             <li class="nav-item">
               <a class="nav-link" href="/pedido/add">Anotar pedido</a>
             </li>
+            
             <li class="nav-item">
-              <a class="nav-link" href="/pedido/realizar">Realizar pedido</a>
+              <a class="nav-link" href="/pedidos-pendientes">Pedidos pendientes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pedidos-realizados">Pedidos realizados</a>
             </li>
           </ul>
 
         </li>
-        <!-- Fin experimento -->
 
-        <!-- Principio experimento -->
         <li class="nav-item">
           <div class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             Comics
           </div>
 
-          <ul class="drpDwnNav dropdown-menu">
+          <ul id="sinsombra" class="drpDwnNav dropdown-menu">
             <li class="nav-item">
               <a class="nav-link" href="/comics/add">Añadir cómic</a>
             </li>
@@ -71,7 +61,6 @@
         <li class="nav-item">
           <a class="nav-link" href="/logout">Cerrar sesión</a>
         </li>
-        <!-- Fin experimento -->
         {{else}}
           <li class="nav-item">
             <a class="nav-link" href="/signup">Regístrate</a>
@@ -81,8 +70,7 @@
           </li>
 
         {{/if}}
-        
-        <li><h3> </h3></li> {{!-- FIXME: si da tiempo quita este li y añade el margin con .sass --}}
+      
       </ul>
     </div>
   </div>
